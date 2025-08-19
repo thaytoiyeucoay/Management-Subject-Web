@@ -1,0 +1,285 @@
+/* Modern Document Management System Styles */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Root Variables for Theme Colors */
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --success-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --warning-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    --danger-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    
+    --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --bg-secondary: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    --bg-card: rgba(255, 255, 255, 0.95);
+    --bg-glass: rgba(255, 255, 255, 0.1);
+    
+    --text-primary: #1e293b; /* Darker for better contrast */
+    --text-secondary: #475569; /* Darker gray for readability */
+    --text-light: #ffffff;
+    
+    --border-radius: 16px;
+    --border-radius-sm: 8px;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Global Styles */
+.stApp {
+    background: var(--bg-primary);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Hide Streamlit Branding */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
+header {visibility: hidden;}
+
+/* Custom Container Styles */
+.main-container {
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin: 1rem 0;
+    box-shadow: var(--shadow-soft);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: var(--transition-smooth);
+}
+
+.main-container:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
+
+/* Glass Card Effect */
+.glass-card {
+    background: var(--bg-glass);
+    backdrop-filter: blur(20px);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    transition: var(--transition-smooth);
+}
+
+.glass-card:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Modern Button Styles */
+.stButton > button {
+    background: var(--primary-gradient);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4c93 100%);
+}
+
+.stButton > button:active {
+    transform: translateY(0);
+}
+
+/* Success Button */
+.success-btn > button {
+    background: var(--success-gradient) !important;
+}
+
+.success-btn > button:hover {
+    background: linear-gradient(135deg, #3d8bfe 0%, #00d4fe 100%) !important;
+}
+
+/* Danger Button */
+.danger-btn > button {
+    background: var(--danger-gradient) !important;
+}
+
+.danger-btn > button:hover {
+    background: linear-gradient(135deg, #e85a8a 0%, #f4c430 100%) !important;
+}
+
+/* Form Styles */
+.stTextInput > div > div > input {
+    border-radius: var(--border-radius-sm);
+    border: 2px solid rgba(102, 126, 234, 0.2);
+    transition: var(--transition-smooth);
+    padding: 0.75rem;
+    font-size: 1rem;
+}
+
+.stTextInput > div > div > input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.stSelectbox > div > div > div {
+    border-radius: var(--border-radius-sm);
+    border: 2px solid rgba(102, 126, 234, 0.2);
+    transition: var(--transition-smooth);
+}
+
+/* File Uploader Styles */
+.stFileUploader > div {
+    border: 2px dashed rgba(102, 126, 234, 0.3);
+    border-radius: var(--border-radius);
+    background: var(--bg-glass);
+    transition: var(--transition-smooth);
+    padding: 2rem;
+}
+
+.stFileUploader > div:hover {
+    border-color: #667eea;
+    background: rgba(102, 126, 234, 0.1);
+}
+
+/* Sidebar Styles */
+.css-1d391kg {
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    margin: 1rem;
+    box-shadow: var(--shadow-soft);
+}
+
+/* Title Styles */
+h1 {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+p {
+    color: var(--text-primary);
+}
+
+h2, h3 {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* Card Animation */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated-card {
+    animation: slideInUp 0.6s ease-out;
+}
+
+/* Loading Animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.loading-pulse {
+    animation: pulse 2s infinite;
+}
+
+/* Tag Styles */
+.tag {
+    background: var(--primary-gradient);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin: 0.25rem;
+    display: inline-block;
+    transition: var(--transition-smooth);
+}
+
+.tag:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Progress Bar */
+.stProgress > div > div > div {
+    background: var(--primary-gradient);
+    border-radius: var(--border-radius-sm);
+}
+
+/* Success/Error Messages */
+.stSuccess {
+    background: var(--success-gradient);
+    color: white;
+    border-radius: var(--border-radius-sm);
+    border: none;
+}
+
+.stError {
+    background: var(--danger-gradient);
+    color: white;
+    border-radius: var(--border-radius-sm);
+    border: none;
+}
+
+.stInfo {
+    background: var(--dark-gradient);
+    color: white;
+    border-radius: var(--border-radius-sm);
+    border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 1rem;
+        margin: 0.5rem 0;
+    }
+    
+    .glass-card {
+        padding: 1rem;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-gradient);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4c93 100%);
+}
