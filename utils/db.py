@@ -61,3 +61,12 @@ def add_subject(user_id: str, name: str) -> None:
 def delete_subject(subject_id: int) -> None:
     """Xóa một môn học."""
     supabase.table("subjects").delete().eq("id", subject_id).execute()
+
+def update_subject(subject_id: int, name: str) -> None:
+    """Cập nhật tên môn học."""
+    supabase.table("subjects").update({"name": name}).eq("id", subject_id).execute()
+
+def get_subject_by_id(subject_id: int) -> Dict[str, Any] | None:
+    """Lấy thông tin môn học theo ID."""
+    res = supabase.table("subjects").select("id, name, user_id").eq("id", subject_id).single().execute()
+    return res.data
